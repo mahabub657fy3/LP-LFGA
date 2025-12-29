@@ -1,9 +1,6 @@
 # LP-LFGA: Data-Efficient Multi-Target Generative Attack with Learnable Prompts
 
-<p align="center">
-  <img src="![diagram](https://github.com/user-attachments/assets/61cc936e-b904-4d4a-afad-ec5ec1e97a14)
-" alt="LP-LFGA overall framework" width="920">
-</p>
+![diagram](https://github.com/user-attachments/assets/d6efb32e-9711-489b-b4ec-ec989a99afda)
 
 <p align="center">
   <b>LP-LFGA</b> is a data-efficient, multi-target, conditional generative attack framework that integrates <b>frequency decomposition</b> and <b>CLIP-guided conditioning</b> with <b>learnable prompts</b>.
