@@ -36,10 +36,7 @@ requiring only a single conditional generator. We further show
 that learnable prompts improve data efficiency under limited 
 training data and scarc e class coverage, and that our frequency -
 aware generator yields stronger robustness to input 
-transformations and robust -training defenses. The code is 
-available at: xxxxx  
-Keywords —component, formatting, style, styling, insert ( key 
-words )
+transformations and robust -training defenses.
 
 ---
 
@@ -56,11 +53,6 @@ words )
   - **ImageNet**
   - **CIFAR-10**
 
----
-
-> Tip: Add `data/`, `results/`, `checkpoints/` to `.gitignore`.
-
----
 
 ## Environment setup (one command)
 
@@ -72,7 +64,7 @@ torchaudio: 2.2.1
 CLIP: 1.0
 einops: 0.8.1
 ### 1) Create and activate
-```bash
+
 conda env create -f environment.yml
 conda activate LP-LFGA
 python -c "import torch; print('torch:', torch.__version__); print('cuda available:', torch.cuda.is_available()); print('cuda:', torch.version.cuda)"
@@ -87,14 +79,12 @@ mkdir -p pretrained/imagenet pretrained/cifar10
 # CIFAR-10 (C5, ResNet-56 surrogate)
 # wget -O pretrained/cifar10/resnet56_C5_eps16_k2.zip <YOUR_RELEASE_URL>
 # unzip pretrained/cifar10/resnet56_C5_eps16_k2.zip -d pretrained/cifar10/
+
 Quick start: one-click evaluation (pretrained → generate → inference)
 
 Evaluation is a 2-stage pipeline:
-
 eval_*.py generates adversarial images
-
 inference.py computes TSR on a model set
-
 You can run both with && as a one-click command.
 
 A) ImageNet (recommended: learnable prompts)
@@ -116,7 +106,6 @@ python inference.py \
   --model_t normal \
   --batch_size 10 \
   --test_dir results/imagenet
-
 B) CIFAR-10 (recommended: learnable prompts)
 python eval_cifar10.py \
   --data_dir /path/to/cifar10/test \
@@ -136,11 +125,6 @@ python inference.py \
   --model_t cifar \
   --batch_size 10 \
   --test_dir results/cifar10
-
-
-Tip: If your script argument names differ slightly, run:
-python eval_imagenet.py -h and python inference.py -h.
-
 Training
 
 Training saves:
@@ -161,7 +145,6 @@ python train_imagenet.py \
   --k 4 \
   --prompt_mode learnable \
   --save_dir checkpoints/imagenet
-
 Train on CIFAR-10
 python train_cifar10.py \
   --train_dir /path/to/cifar10/train \
@@ -175,57 +158,27 @@ python train_cifar10.py \
   --prompt_mode learnable \
   --save_dir checkpoints/cifar10
 
-Inference / metrics
 
 inference.py reports targeted transfer success rates (TSR) across selected target model groups via --model_t.
 
 Common options:
-
 --model_t normal : standard models
-
 --model_t robust : robust models
-
 --model_t all : all available target models
-
 --model_t cifar : CIFAR-only targets
 
 Example:
+python inference.py \--dataset imagenet \--label_flag N8 \--model_t all \--batch_size 10 \ --test_dir results/imagenet
 
-python inference.py \
-  --dataset imagenet \
-  --label_flag N8 \
-  --model_t all \
-  --batch_size 10 \
-  --test_dir results/imagenet
 
-Figures
-
-Overall framework (recommended path): assets/framework.png
-
-Add additional paper figures (optional):
-
-assets/teaser.png
-
-assets/qualitative.png
-
-If you want, you can also add a “Results” section below and embed qualitative examples:
-
-## Qualitative Results
-<p align="center">
-  <img src="assets/qualitative.png" width="920">
-</p>
 
 Notes / troubleshooting
 (1) Missing modules / import errors
-
 If you encounter ModuleNotFoundError, ensure your repo contains the expected modules referenced in the scripts
 (or update import paths accordingly). Typical examples:
-
 models/generator.py (Generator)
-
 image_transformer.py (rotation)
 
 (2) Precomputed prompt mode
-
 If you support a --prompt_mode precomputed, ensure the code exposes a --text_feature_path argument and loads
 the correct .pth file (e.g., imagenet_text_feature_multi_prompt.pth).
