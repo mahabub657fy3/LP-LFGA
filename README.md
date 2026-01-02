@@ -9,8 +9,8 @@ Deep Neural Networks (DNNs) are critically vulnerable to adversarial examples, p
 
 ## **Features**
 
-* **One-click Evaluation:** Easily evaluate the performance of the adversarial attack on CIFAR-10 or ImageNet datasets.
-* **One-click Inference:** Generate adversarial examples for specified classes using a pre-trained or trained model.
+* **One-click Evaluation:** Generate adversarial examples for specified classes using a pre-trained or trained model.
+* **One-click Inference:** Easily evaluate the performance of the adversarial attack on CIFAR-10 or ImageNet datasets.
 * **One-click Training:** Train the model from scratch or resume from a checkpoint with minimal setup.
 * **Pretrained Models:** Download pretrained models from Google Drive or upload your own model checkpoint (`.pth` file).
 
