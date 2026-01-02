@@ -1,5 +1,5 @@
 ---
-# Data-Efficient Multi-Target Generative Attack with Learnable Prompts**
+# Data-Efficient Multi-Target Generative Attack with Learnable Prompts
 
 <img width="1064" height="260" alt="diagram" src="https://github.com/user-attachments/assets/15e93c3e-2917-4185-8f24-71d09a513c4c" />
 
