@@ -53,6 +53,8 @@ def load_model(model_name):
         model_t = torchvision.models.googlenet(weights=torchvision.models.GoogLeNet_Weights.IMAGENET1K_V1)
     elif model_name == 'incv3':
         model_t = torchvision.models.inception_v3(weights=torchvision.models.Inception_V3_Weights.DEFAULT)
+    elif model_name == 'Incv3':
+        model_t = torchvision.models.inception_v3(weights=torchvision.models.Inception_V3_Weights.IMAGENET1K_V1)
     elif model_name == 'res152':
         model_t = torchvision.models.resnet152(weights=torchvision.models.ResNet152_Weights.DEFAULT)
     elif model_name == 'res50':
@@ -218,5 +220,6 @@ def getClassIndex(dataset='imagenet'):
         class_list.append(cls)
 
     return class_list
+
 
 
