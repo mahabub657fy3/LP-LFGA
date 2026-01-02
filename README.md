@@ -1,11 +1,15 @@
 ---
 # Data-Efficient Multi-Target Generative Attack with Learnable Prompts**
 
+*<img width="1064" height="260" alt="diagram" src="https://github.com/user-attachments/assets/e2302b0f-fc51-4795-a43c-8aef21e40428" />*
+
 ## **Abstract**
 
 Deep Neural Networks (DNNs) are critically vulnerable to adversarial examples, posing significant risks in safety-critical applications such as autonomous driving and biometric authentication. Recent advancements in generative adversarial attacks highlight their effectiveness, particularly due to their transferability and efficient inference. However, most of the existing methods assume the availability of a large portion of the victim model's training data, which is an unrealistic scenario in real-world applications. To address this limitation, we propose a data-efficient approach that combines frequency decomposition and CLIP-guided conditioning for adversarial attacks. Our framework incorporates (i) a low-pass frequency branch to perturb a neutralized image and facilitate optimization, (ii) a conditional generator that leverages CLIP text embeddings for target-class semantics, and (iii) a learnable prompt module to adapt these embeddings to the attack objective with only a small subset of classes and images. Experimental results on ImageNet and CIFAR-10 datasets demonstrate that our method achieves state-of-the-art targeted transferability, outperforming existing multi-target attacks, particularly in data-scarce scenarios.
 
 ---
+Average targeted success rate (TSR) as a function of training dataset size (10k–100k). Shaded regions indicate the absolute TSR improvement of our method over CGNC.
+<img width="1500" height="900" alt="Figure_1" src="https://github.com/user-attachments/assets/6228664d-36f2-448a-b2e7-9993d55487b7" />
 
 ## **Features**
 
@@ -25,8 +29,6 @@ The overall pipeline for the LP-LFGA framework is as follows:
 3. **CLIP-Guided Conditioning:** The model is conditioned using text embeddings from CLIP, either precomputed or learned through a prompt module.
 4. **Adversarial Generation:** The conditional generator produces adversarial examples that perturb the low-frequency components.
 5. **Model Evaluation:** The generated adversarial examples are evaluated for transferability and effectiveness against the victim model.
-
-*<img width="1064" height="260" alt="diagram" src="https://github.com/user-attachments/assets/e2302b0f-fc51-4795-a43c-8aef21e40428" />*
 
 ---
 
