@@ -1,7 +1,7 @@
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from utils import *
-from models.generator import Generator
+from generator import Generator
 from image_transformer import rotation
 from PIL import Image, ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
