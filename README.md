@@ -49,7 +49,7 @@ conda activate lp-lfga
 
 You can download the pretrained models directly from Google Drive or upload your own `.pth` files.
 
-* **[Download Pretrained Models] **
+* **[Download Pretrained Models](https://drive.google.com/drive/folders/1HhYsKmOBHC17ypRZojs4MiTIV8Z3h4af?usp=sharing) **
 
 Or, upload your own `.pth` files to the `models/` directory.
 
