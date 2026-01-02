@@ -4,7 +4,7 @@ import torch
 import numpy as np
 from torchvision import datasets, transforms
 from utils import *
-from models.generator import Generator
+from generator import Generator
 
 
 def main():
@@ -141,3 +141,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
