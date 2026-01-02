@@ -72,7 +72,7 @@ def load_model(model_name):
 
 def fix_labels(args, test_set):
     val_dict = {}
-    with open("val.txt") as file:
+    with open("Cifar-10_val.txt") as file:
         for line in file:
             key, val = line.strip().split(',')
             key = os.path.splitext(os.path.basename(key))[0]
@@ -218,3 +218,4 @@ def getClassIndex(dataset='imagenet'):
         class_list.append(cls)
 
     return class_list
+
