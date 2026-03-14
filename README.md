@@ -62,7 +62,7 @@ Or, upload your own `.pth` files to the `models/` directory.
 Generate Adversarial Examples on CIFAR-10 or ImageNet, use the following commands:
 
 #### **CIFAR-10 Evaluation:**
-Below we provide running commands for generating targeted adversarial examples on [Cifar-10](https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz) (10k images)  under our multi-class setting:
+Below we provide running commands for generating targeted adversarial examples on [Cifar-10](https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz)  under our multi-class setting:
 
 ```bash
 python eval_cifar10.py \
